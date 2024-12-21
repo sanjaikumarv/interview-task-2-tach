@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { mainContent } from './mydatas'
-import SearchBok from './Inputs/SearchBok'
+import SearchBok from './Inputs/SearchBox'
 
 export default function SidebarComponent({ component, element, setElement }: { component: string, element: string, setElement: Dispatch<SetStateAction<string>> }) {
     const [search, setSearch] = useState("")
