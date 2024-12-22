@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from 'react'
 
 export default function SearchBox({ setSearch }: { setSearch: Dispatch<SetStateAction<string>>, search: string }) {
-
     const [element, setElement] = useState("")
     return (
         <div className='relative'>

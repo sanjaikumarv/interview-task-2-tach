@@ -1,14 +1,9 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { sideBarItems } from './mydatas'
+import React, { Dispatch, SetStateAction } from 'react'
+import { GetData } from './Hooks/getdata'
+import { GET_MAIN_SIDEBAR_CONTENT } from './Endpoint'
 
 export default function MainSidebar({ component, setComponent, version }: { component: string, setComponent: Dispatch<SetStateAction<string>>, version: string }) {
-    const [data, setData] = useState<Array<string> | undefined>()
-
-    useEffect(() => {
-        const components = sideBarItems.find((sI) => sI.verisonName === version)
-        setData(components?.sideBarElements || [])
-        setComponent(components?.sideBarElements[0] || "")
-    }, [version])
+    const { data } = GetData(`${GET_MAIN_SIDEBAR_CONTENT}/${version}`, setComponent, true)
 
     return (
         <div className='bg-blue-light pt-14 space-y-2  min-h-screen'>

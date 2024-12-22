@@ -1,39 +1,40 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { mainContent } from './mydatas'
 import SearchBok from './Inputs/SearchBox'
+import { GetData } from './Hooks/getdata'
+import { GET_SIDEBAR_CONTENT } from './Endpoint'
 
 export default function SidebarComponent({ component, element, setElement }: { component: string, element: string, setElement: Dispatch<SetStateAction<string>> }) {
     const [search, setSearch] = useState("")
-    const [data, setData] = useState([])
+    const [filteredData, setFilteredData] = useState([""])
+    const { data } = GetData(`${GET_SIDEBAR_CONTENT}/${component}`, setElement, true)
 
-    const mainContentData: any = mainContent.find((c) => c.sideBarName === component)
-
+    function filter() {
+        const filtededData = data.filter((item: string) => item.toLowerCase().includes(search.toLowerCase()))
+        return setFilteredData(filtededData)
+    }
+    
     useEffect(() => {
         if (search !== "") {
-            const filterData = mainContentData?.content.filter((item: string) => item.toLowerCase().includes(search.toLowerCase()))
-            return setData(filterData)
+            return filter()
         }
-        setData(mainContentData?.content)
-        setElement(mainContentData?.content[0])
+        setFilteredData(data)
+    }, [search, data[0]])
 
-    }, [search, component])
+
 
     return (
         <div className='bg-blue-dark space-y-3 py-2 min-h-screen px-2 rounded-md'>
             <div className='flex justify-between px-1'>
-
                 <p className='text-[#4E95D9]'>Components</p>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-4  text-[#4E95D9]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
-
                 </div>
             </div>
 
             <SearchBok search={search} setSearch={setSearch} />
-            {data.map((d, idx) => <Content element={element} setElement={setElement} key={idx} content={d} />)}
+            {filteredData.map((d, idx) => <Content element={element} setElement={setElement} key={idx} content={d} />)}
         </div>
     )
 }
