@@ -7,12 +7,12 @@ export default function Element({ element }: { element: string }) {
 
     const [currentElement, setCurrentElement] = useState("Example-1")
     return (
-        <div className='bg-white p-4 text-black min-h-screen'>
-            <p className=' text-xl  text-[#145593]'>{element}</p>
-            <div className='flex space-x-4 px-4'>
-                {elementDatas.map((d, idx) => <button onClick={() => setCurrentElement(d)} key={idx} className={`text-[#AACDED] ${currentElement === d ? "text-[#376FA4] border-b-2 py-2 border-[#145593]" :"text-[#AACDED]"}`}>{d}</button>)}
+        <div className='bg-white p-4 col-start-4 col-end-13 text-black'>
+            <p className=' text-xl font-semibold text-[#215F9A]'> : {element}</p>
+            <div className='flex space-x-4 px-3'>
+                {elementDatas.map((d, idx) => <button onClick={() => setCurrentElement(d)} key={idx} className={`text-[#AACDED] ${currentElement === d && "text-[#27639E] border-b-4 py-2 border-[#23619C]"}`}>{d}</button>)}
             </div>
-            <p className='p-5 border-[#AACDED] min-h-[60vh] rounded-md text-[#145593] border min-w-[800px]'>component usage {currentElement}</p>
+            <p className='p-5 min-h-[73vh] -mt-[2.5px] border-[#9FC7EB] rounded-md text-[#23619C] border w-full'>component usage {currentElement}</p>
         </div>
     )
 }

@@ -16,7 +16,7 @@ export default function Home() {
       <main>
         <Header version={version} setVersion={setVersion} />
       </main>
-      <div className="flex">
+      <div className="grid grid-cols-12">
         <MainSidebar version={version} setComponent={setComponent} component={component} />
 
         <SidebarComponent component={component} setElement={setElement} element={element} />

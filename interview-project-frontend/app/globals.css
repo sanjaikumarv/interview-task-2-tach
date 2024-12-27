@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #FFFFFF;
     --foreground: #ededed;
   }
 }
@@ -18,4 +18,19 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+::-webkit-scrollbar {
+  width: 5px; /* Vertical scrollbar width */
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+  background: blue;
+  margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0edf8;
 }

@@ -13,7 +13,8 @@ export default {
         foreground: "var(--foreground)",
         blue: {
           light: "#DCEAF7",
-          dark: "#C0DAF2"
+          dark: "#215F9A",
+          medium: "#C0DAF2"
         }
       },
     },
