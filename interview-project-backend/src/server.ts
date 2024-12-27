@@ -4,9 +4,15 @@ import { appPort, frontendUrl } from "./env"
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: (origin, callback) => {
+        if (origin && origin !== frontendUrl) {
+            return callback(new Error("Origin not allowed by cors"))
+        }
+        return callback(null, true)
+    }
+}))
 
-app.use(express.json())
 
 
 app.listen(appPort, () => {

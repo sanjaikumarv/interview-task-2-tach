@@ -3,15 +3,12 @@ import { mainContent, sideBarItems } from "./datas"
 import app from "./server"
 
 app.get("/main-sidebar/:version", (req: Request, res: Response) => {
-
     const { version } = req.params
-
     if (!version) {
         res.json([])
     }
-
     const filterData = sideBarItems.find((item) => item.verisonName === version)?.sideBarElements
-    res.json(filterData)
+    res.send(filterData)
 })
 
 app.get("/sidebar/:name", (req: Request, res: Response) => {

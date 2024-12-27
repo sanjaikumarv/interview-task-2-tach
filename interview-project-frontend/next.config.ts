@@ -13,7 +13,6 @@ const nextConfig: NextConfig = {
       fallback: [],
     };
   },
-  /* other config options here */
 };
 
 export default nextConfig;

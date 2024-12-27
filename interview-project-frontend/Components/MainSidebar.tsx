@@ -16,8 +16,8 @@ export default function MainSidebar({ component, setComponent, version }: { comp
 function Data({ name = "", component, setComponent }: { name: string, component: string, setComponent: Dispatch<SetStateAction<string>> }) {
     return (
         <div onClick={() => setComponent(name)} className={`py-2 ${component === name ? "bg-blue-medium shadow-lg" : "bg-blue-light"}`}>
-            <p className='p-4 m-auto w-2 text-center rounded-full bg-[#4E95D9]'></p>
-            <button className={`${component === name ? "text-[#4E95D9]" :"text-black"} w-full px-10 `}>{name}</button>
+            <p className='p-4 m-auto w-2 mt-1 text-center rounded-full bg-[#4E95D9]'></p>
+            <button className={`${component === name ? "text-[#4E95D9]" :"text-black"} w-full px-10  `}>{name}</button>
         </div>
     )
 
