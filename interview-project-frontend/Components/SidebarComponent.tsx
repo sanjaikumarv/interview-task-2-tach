@@ -8,12 +8,12 @@ import { useStateContext } from './context/StateContext'
 
 export default function SidebarComponent() {
 
-    const { element, setElement, sidebarComponent } = useStateContext()
+    const { element, setElement, sidebarData } = useStateContext()
     const [search, setSearch] = useState("")
     const [filteredData, setFilteredData] = useState<any>([])
 
     function filter() {
-        const filtededData = sidebarComponent.filter((item: any) => item.label.toLowerCase().includes(search.toLowerCase()))
+        const filtededData = sidebarData.filter((item: any) => item.label.toLowerCase().includes(search.toLowerCase()))
         return setFilteredData(filtededData)
     }
 
@@ -21,9 +21,9 @@ export default function SidebarComponent() {
         if (search !== "") {
             return filter()
         }
-        setFilteredData(sidebarComponent || [])
-        setElement(sidebarComponent[0]?.id)
-    }, [search, sidebarComponent.length])
+        setFilteredData(sidebarData || [])
+        setElement(sidebarData[0]?.id)
+    }, [search, sidebarData.length])
 
 
     return (

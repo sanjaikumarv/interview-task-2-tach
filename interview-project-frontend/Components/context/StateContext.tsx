@@ -4,7 +4,7 @@ import { GetData } from '../Hooks/getdata';
 
 const StateContext = createContext<any>({})
 
-export const useStateContext = () => use(StateContext)
+export const useStateContext = () => use(StateContext) || {}
 
 interface SetupFormProps {
     children: JSX.Element | JSX.Element[];
@@ -20,9 +20,9 @@ export default function StateProvider({ children }: SetupFormProps) {
 
     const { data } = GetData(`/helpDocs/${version}/sidebar/${component}`)
 
-    const sidebarComponent = data?.[version]?.[component] || []
+    const sidebarData = data?.[version]?.[component] || []
 
     return (
-        <StateContext value={{ version, setVersion, component, setComponent, element, setElement, elementDatas, sidebarComponent: sidebarComponent }}>{children}</StateContext>
+        <StateContext value={{ version, setVersion, component, setComponent, element, setElement, elementDatas, sidebarData: sidebarData }}>{children}</StateContext>
     )
 }

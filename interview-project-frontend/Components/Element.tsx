@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import { useStateContext } from './context/StateContext'
 
 export default function Element() {
-    const { element, elementDatas, sidebarComponent } = useStateContext()
+    const { element, elementDatas, sidebarData } = useStateContext()
 
-    const elementName = sidebarComponent.find((e: any) => element === e.id)?.label
+    const elementName = sidebarData.find((e: any) => element === e.id)?.label
     const [currentElement, setCurrentElement] = useState("Example-1")
     return (
         <div className='bg-white p-4 col-start-4 col-end-13 text-black'>
