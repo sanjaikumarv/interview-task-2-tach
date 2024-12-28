@@ -1,12 +1,10 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 import VersionDropDown from './Inputs/VersionDropDown'
+import { useStateContext } from './context/StateContext'
 
-export default function Header({ version, setVersion }: {
-    version: string,
-    setVersion: Dispatch<SetStateAction<string>>
-}) {
-  
+export default function Header() {
 
+    const { version, setVersion } = useStateContext()
     return (
         <div className='p-5 bg-blue-light flex justify-between'>
             <div className='flex space-x-8'>

@@ -28,7 +28,7 @@
   },
   "v_0-2": {
     "label": "version-0.2",
-    "main-sdebar-001": {
+    "main-sidebar-001": {
       "label": "D",
       "sidebarItems": [
         { "id": "4001", "label": "Element - D1" },
@@ -55,7 +55,7 @@
   },
   "v_0-3": {
     "label": "version-0.3",
-    "main-sdebar-001": {
+    "main-sidebar-001": {
       "label": "G",
       "sidebarItems": [
         { "id": "4001", "label": "Element - G1" },
@@ -82,7 +82,7 @@
   },
   "v_0-4": {
     "label": "version-0.4",
-    "main-sdebar-001": {
+    "main-sidebar-001": {
       "label": "J",
       "sidebarItems": [
         { "id": "4001", "label": "Element - J1" },

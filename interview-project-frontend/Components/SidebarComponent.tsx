@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import SearchBok from './Inputs/SearchBox'
-import { GetData } from './Hooks/getdata'
 import FonelSvg from './Svg/FonelSvg'
 import CancelSvg from './Svg/CancelSvg'
 import ComponentSvg from './Inputs/ComponentSvg'
+import { useStateContext } from './context/StateContext'
 
-export default function SidebarComponent({ version, component, element, setElement }: { component: string, element: string, setElement: Dispatch<SetStateAction<string>>, version: string }) {
+export default function SidebarComponent() {
+
+    const { element, setElement, sidebarComponent } = useStateContext()
     const [search, setSearch] = useState("")
     const [filteredData, setFilteredData] = useState<any>([])
-    const { data } = GetData(`/helpDocs/${version}/sidebar/${component}`)
 
-    const sidebarComponent = data?.[version]?.[component] || []
     function filter() {
         const filtededData = sidebarComponent.filter((item: any) => item.label.toLowerCase().includes(search.toLowerCase()))
         return setFilteredData(filtededData)

@@ -2,8 +2,11 @@
 import React, { Dispatch, SetStateAction, useEffect } from 'react'
 import { GetData } from './Hooks/getdata'
 import { GET_MAIN_SIDEBAR_CONTENT } from './Endpoint'
+import { useStateContext } from './context/StateContext'
 
-export default function MainSidebar({ component, setComponent, version }: { component: string, setComponent: Dispatch<SetStateAction<string>>, version: string }) {
+export default function MainSidebar() {
+
+    const { version, setComponent, component } = useStateContext()
     const { data } = GetData(`${GET_MAIN_SIDEBAR_CONTENT}/${version}`)
 
     const sideBarData = data?.[version] || []
