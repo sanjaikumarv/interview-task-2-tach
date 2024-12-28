@@ -1,0 +1,110 @@
+{
+  "v_0-1": {
+    "label": "version-0.1",
+    "main-sidebar-001": {
+      "label": "A",
+      "sidebarItems": [
+        { "id": "1001", "label": "Element - A1" },
+        { "id": "1002", "label": "Element - A2" },
+        { "id": "1003", "label": "Element - A3" }
+      ]
+    },
+    "main-sidebar-002": {
+      "label": "B",
+      "sidebarItems": [
+        { "id": "2001", "label": "Element - B1" },
+        { "id": "2002", "label": "Element - B2" },
+        { "id": "2003", "label": "Element - B3" }
+      ]
+    },
+    "main-sidebar-003": {
+      "label": "C",
+      "sidebarItems": [
+        { "id": "3001", "label": "Element - C1" },
+        { "id": "3002", "label": "Element - C2" },
+        { "id": "3003", "label": "Element - C3" }
+      ]
+    }
+  },
+  "v_0-2": {
+    "label": "version-0.2",
+    "main-sdebar-001": {
+      "label": "D",
+      "sidebarItems": [
+        { "id": "4001", "label": "Element - D1" },
+        { "id": "4002", "label": "Element - D2" },
+        { "id": "4003", "label": "Element - D3" }
+      ]
+    },
+    "main-sidebar-002": {
+      "label": "E",
+      "sidebarItems": [
+        { "id": "5001", "label": "Element - E1" },
+        { "id": "5002", "label": "Element - E2" },
+        { "id": "5003", "label": "Element - E3" }
+      ]
+    },
+    "main-sidebar-003": {
+      "label": "F",
+      "sidebarItems": [
+        { "id": "6001", "label": "Element - F1" },
+        { "id": "6002", "label": "Element - F2" },
+        { "id": "6003", "label": "Element - F3" }
+      ]
+    }
+  },
+  "v_0-3": {
+    "label": "version-0.3",
+    "main-sdebar-001": {
+      "label": "G",
+      "sidebarItems": [
+        { "id": "4001", "label": "Element - G1" },
+        { "id": "4002", "label": "Element - G2" },
+        { "id": "4003", "label": "Element - G3" }
+      ]
+    },
+    "main-sidebar-002": {
+      "label": "H",
+      "sidebarItems": [
+        { "id": "5001", "label": "Element - H1" },
+        { "id": "5002", "label": "Element - H2" },
+        { "id": "5003", "label": "Element - H3" }
+      ]
+    },
+    "main-sidebar-003": {
+      "label": "I",
+      "sidebarItems": [
+        { "id": "6001", "label": "Element - I1" },
+        { "id": "6002", "label": "Element - I2" },
+        { "id": "6003", "label": "Element - I3" }
+      ]
+    }
+  },
+  "v_0-4": {
+    "label": "version-0.4",
+    "main-sdebar-001": {
+      "label": "J",
+      "sidebarItems": [
+        { "id": "4001", "label": "Element - J1" },
+        { "id": "4002", "label": "Element - J2" },
+        { "id": "4003", "label": "Element - J3" }
+      ]
+    },
+    "main-sidebar-002": {
+      "label": "K",
+      "sidebarItems": [
+        { "id": "5001", "label": "Element - K1" },
+        { "id": "5002", "label": "Element - K2" },
+        { "id": "5003", "label": "Element - K3" }
+      ]
+    },
+    "main-sidebar-003": {
+      "label": "L",
+      "sidebarItems": [
+        { "id": "6001", "label": "Element - L1" },
+        { "id": "6002", "label": "Element - L2" },
+        { "id": "6003", "label": "Element - L3" }
+      ]
+    }
+  }
+}

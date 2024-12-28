@@ -7,8 +7,8 @@ import SidebarComponent from "@/Components/SidebarComponent";
 import { useState } from "react";
 
 export default function Home() {
-  const [version, setVersion] = useState("0.1")
-  const [component, setComponent] = useState("A")
+  const [version, setVersion] = useState("v_0-1")
+  const [component, setComponent] = useState("main-sidebar-001")
   const [element, setElement] = useState("element-A1")
 
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <div className="grid grid-cols-12">
         <MainSidebar version={version} setComponent={setComponent} component={component} />
 
-        <SidebarComponent component={component} setElement={setElement} element={element} />
+        <SidebarComponent version={version} component={component} setElement={setElement} element={element} />
 
         <Element element={element} />
       </div>

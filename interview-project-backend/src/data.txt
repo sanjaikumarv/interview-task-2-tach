@@ -1,0 +1,93 @@
+GET /helpDocs/versions/{versionId}
+{
+	versions:{
+			{id, label},
+			{id, label}	
+	}
+}
+ 
+ 
+GET /helpDocs/main-sidebar/{versionId}
+ 
+{
+	versionId: {
+	{ id, label },
+	{ id, label },
+	{ id, label },
+	{ id, label },
+	}
+}
+ 
+GET /helpDocs/{versionId}/sidebar/{id}
+ 
+versionId: {
+	main-sidebar-id: {
+	{ id, label },
+	{ id, label },
+	{ id, label },
+	{ id, label },
+	}
+}
+ 
+---------------
+{
+v_0-1: {
+			label: "version-0.1", 
+			main-sidebar-001: { 
+								label: "A",  sidebarItems: { 
+															{ id:"1001", label:"Element - A1"} , { id:"1002", label:"Element - A2"} , { id, label} 
+														} 
+							  },
+			main-sidebar-002: { 
+								label: "B" ,  sidebarItems: { 
+															{ id:"2001", label: "Element - B1" } , { id, label} , { id, label} 
+														} 
+							  },
+			main-sidebar-003: { 
+								label: "C",  sidebarItems: { 
+															{ id:"3001", label:"Element - C1"} , { id, label} , { id, label} 
+														} 
+							  }
+		},
+v_0-2: {
+			label: "version-0.2", 
+			main-sidebar-001: { 
+								label: "X",  sidebarItems: { 
+															{ id:"4001", label:"Element - X1"} , { id, label} , { id, label} 
+														} 
+							  },
+			main-sidebar-002: { 
+								label: "Y" ,  sidebarItems: { 
+															{ id:"5001", label: "Element - Y1" } , { id, label} , { id, label} 
+														} 
+							  },
+			main-sidebar-003: { 
+								label: "Z",  sidebarItems: { 
+															{ id:"6001", label:"Element - Z1"} , { id, label} , { id, label} 
+														} 
+							  }
+		},
+}
+
+
+
+
+Web components - https://developer.mozilla.org/en-US/docs/Web/API/Web_components
+2. JavaScript
+3. CSS3
+HTML5 - No ppt
+React.js - No ppt
+4. RESTful Api best practises
+5. REST api Http Status codes
+6. Web socket
+7. SOLID design principles
+8. DRY
+9. KISS
+ 
+Design patterns:
+10. Creational design patterns - Factory method, Singleton, Builder
+11. Structural design Patterns - Proxy , Façade, Adapter, Composite, Flyweight 
+12. Behavioural design Patterns  - Command, Observer , Strategy, Template Method
+
+
+

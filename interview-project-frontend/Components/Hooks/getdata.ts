@@ -1,15 +1,12 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from "react";
 import axios from "axios"
-export function GetData(url: string, setCurrentElement: Dispatch<SetStateAction<string>>, currentElement: boolean) {
-    const [data, setData] = useState([""])
+export function GetData(url: string) {
+    const [data, setData] = useState<any>()
     const fetchData = async () => {
         const responsse = await axios.get(url)
         const data = responsse.data
         setData(data)
-        if (currentElement) {
-            setCurrentElement(data[0])
-        }
-
     }
 
     useEffect(() => {

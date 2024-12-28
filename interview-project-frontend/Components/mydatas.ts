@@ -1,2 +1,2 @@
 
-export const versions = ["0.1", "0.2"]
+export const versions = ["v_0-1", "v_0-2"]

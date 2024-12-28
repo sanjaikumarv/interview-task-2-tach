@@ -1,25 +1,30 @@
 import { Request, Response } from "express"
-import { mainContent, sideBarItems } from "./datas"
 import app from "./server"
+import { getMainElements, getMainSideBarItems, getVersionLabels } from "./utils"
+
+app.get('/versions', (req, res) => {
+    const versions = getVersionLabels()
+    res.json(versions)
+})
 
 app.get("/main-sidebar/:version", (req: Request, res: Response) => {
     const { version } = req.params
     if (!version) {
         res.json([])
     }
-    const filterData = sideBarItems.find((item) => item.verisonName === version)?.sideBarElements
-    res.send(filterData)
+    const labels = getMainSideBarItems(version)
+    res.send(labels)
 })
 
-app.get("/sidebar/:name", (req: Request, res: Response) => {
+app.get("/:versionId/sidebar/:mainSideBarId", (req: Request, res: Response) => {
 
-    const { name } = req.params
+    const { versionId, mainSideBarId } = req.params
 
-    if (!name) {
+    if (!versionId || !mainSideBarId) {
         res.json([])
     }
+    const data = getMainElements(versionId, mainSideBarId)
 
-    const filteredData = mainContent.find((item) => item.sideBarName === name)?.content
 
-    res.json(filteredData)
+    res.json(data)
 })

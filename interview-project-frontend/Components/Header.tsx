@@ -5,6 +5,8 @@ export default function Header({ version, setVersion }: {
     version: string,
     setVersion: Dispatch<SetStateAction<string>>
 }) {
+  
+
     return (
         <div className='p-5 bg-blue-light flex justify-between'>
             <div className='flex space-x-8'>

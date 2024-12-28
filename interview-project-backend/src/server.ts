@@ -13,8 +13,6 @@ app.use(cors({
     }
 }))
 
-
-
 app.listen(appPort, () => {
     console.log(`App is running on ${appPort}`)
 })
