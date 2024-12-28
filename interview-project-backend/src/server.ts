@@ -10,7 +10,7 @@ app.use(cors({
             return callback(new Error("Origin not allowed by cors"))
         }
         return callback(null, true)
-    }
+    },
 }))
 
 app.listen(appPort, () => {

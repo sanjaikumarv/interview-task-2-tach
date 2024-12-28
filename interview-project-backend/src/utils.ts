@@ -1,16 +1,17 @@
 import { JSONData } from "./data";
-import { Sidebar } from "./types"
+import { Sidebar } from "./data/types"
 
 export const getMainSideBarItems = (version: string) => {
     const labels: Record<string, any[]> = {};
 
     if (JSONData[version]) {
-        labels[version] = Object.entries(JSONData[version])
-            .filter(([key]) => key.includes('main-sidebar'))
+        //  JSONData[version] = get object with perticular version 
+        labels[version] = Object.entries(JSONData[version]) // convert object key value pair to array 
+            .filter(([key]) => key.includes('main-sidebar')) // Filter the data(value) with perticular key  
             .map(([key, value]: any) => ({
                 id: key,
                 label: value.label,
-            }))
+            })) // return data for perticular format
     }
 
     return labels;

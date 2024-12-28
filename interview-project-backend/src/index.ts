@@ -13,7 +13,7 @@ app.get("/helpDocs/main-sidebar/:version", (req: Request, res: Response) => {
         res.json([])
     }
     const labels = getMainSideBarItems(version)
-    res.send(labels)
+    res.json(labels)
 })
 
 app.get("/helpDocs/:versionId/sidebar/:mainSideBarId", (req: Request, res: Response) => {
