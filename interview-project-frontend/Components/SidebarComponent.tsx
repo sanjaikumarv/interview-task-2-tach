@@ -1,19 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import SearchBok from './Inputs/SearchBox'
 import FonelSvg from './Svg/FonelSvg'
 import CancelSvg from './Svg/CancelSvg'
 import ComponentSvg from './Inputs/ComponentSvg'
 import { useStateContext } from './context/StateContext'
+import { Data } from './Types'
+
+
 
 export default function SidebarComponent() {
 
     const { element, setElement, sidebarData } = useStateContext()
     const [search, setSearch] = useState("")
-    const [filteredData, setFilteredData] = useState<any>([])
+    const [filteredData, setFilteredData] = useState<Data[]>([])
 
     function filter() {
-        const filtededData = sidebarData.filter((item: any) => item.label.toLowerCase().includes(search.toLowerCase()))
+        const filtededData = sidebarData.filter((item: Data) => item.label.toLowerCase().includes(search.toLowerCase()))
         return setFilteredData(filtededData)
     }
 
@@ -37,14 +40,14 @@ export default function SidebarComponent() {
                 <FonelSvg />
             </div>
             <div className='border scroll-bar text-center max-h-[500px] lg:min-h-[500px] overflow-y-scroll rounded-md space-y-2 p-2 border-[#E0EDF8]'>
-                {filteredData.map((d: any, idx: any) => <Content element={element} setElement={setElement} key={idx} content={d} />)}
+                {filteredData.map((d: Data) => <Content element={element} setElement={setElement} key={d.id} content={d} />)}
             </div>
         </div>
     )
 }
 
 
-function Content({ content, setElement, element }: { setElement: Dispatch<SetStateAction<string>>, content: { id: string, label: string }, element: string }) {
+function Content({ content, setElement, element }: { setElement: Dispatch<SetStateAction<string>>, content: Data, element: string }) {
     return (
         <div onClick={() => setElement(content.id)} className={`${element === content.id ? "bg-[#4E95D9] text-white rounded-md" : "text-[#0E2841]"} text-black flex px-2 py-2 space-x-2 hover:cursor-pointer`}>
             <ComponentSvg />

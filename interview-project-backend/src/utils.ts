@@ -18,7 +18,7 @@ export const getMainSideBarItems = (version: string) => {
 };
 
 export const getVersionLabels = () => {
-    return Object.keys(JSONData).map((key) => ({ id: key, value: JSONData[key]?.label }))
+    return Object.keys(JSONData).map((key) => ({ id: key, label: JSONData[key]?.label }))
 }
 
 export const getMainElements = (
