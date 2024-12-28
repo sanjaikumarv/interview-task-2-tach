@@ -5,7 +5,6 @@ export const getMainSideBarItems = (version: string) => {
     const labels: Record<string, any[]> = {};
 
     if (JSONData[version]) {
-        console.log("JSONData[version]", JSONData[version])
         labels[version] = Object.entries(JSONData[version])
             .filter(([key]) => key.includes('main-sidebar'))
             .map(([key, value]: any) => ({
