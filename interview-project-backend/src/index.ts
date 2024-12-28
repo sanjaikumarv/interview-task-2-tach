@@ -2,12 +2,12 @@ import { Request, Response } from "express"
 import app from "./server"
 import { getMainElements, getMainSideBarItems, getVersionLabels } from "./utils"
 
-app.get('/versions', (req, res) => {
+app.get('/helpDocs/versions', (req, res) => {
     const versions = getVersionLabels()
     res.json(versions)
 })
 
-app.get("/main-sidebar/:version", (req: Request, res: Response) => {
+app.get("/helpDocs/main-sidebar/:version", (req: Request, res: Response) => {
     const { version } = req.params
     if (!version) {
         res.json([])
@@ -16,7 +16,7 @@ app.get("/main-sidebar/:version", (req: Request, res: Response) => {
     res.send(labels)
 })
 
-app.get("/:versionId/sidebar/:mainSideBarId", (req: Request, res: Response) => {
+app.get("/helpDocs/:versionId/sidebar/:mainSideBarId", (req: Request, res: Response) => {
 
     const { versionId, mainSideBarId } = req.params
 

@@ -8,10 +8,8 @@ import ComponentSvg from './Inputs/ComponentSvg'
 
 export default function SidebarComponent({ version, component, element, setElement }: { component: string, element: string, setElement: Dispatch<SetStateAction<string>>, version: string }) {
     const [search, setSearch] = useState("")
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [filteredData, setFilteredData] = useState<any>([])
-    const { data } = GetData(`/${version}/sidebar/${component}`)
-
+    const { data } = GetData(`/helpDocs/${version}/sidebar/${component}`)
 
     const sidebarComponent = data?.[version]?.[component] || []
     function filter() {
