@@ -4,7 +4,7 @@ import { getMainElements, getMainSideBarItems, getVersionLabels } from "./utils"
 
 app.get('/helpDocs/versions', (req, res) => {
     const versions = getVersionLabels()
-    res.json(versions)
+    res.json({ versions: versions })
 })
 
 app.get("/helpDocs/main-sidebar/:version", (req: Request, res: Response) => {
@@ -24,7 +24,6 @@ app.get("/helpDocs/:versionId/sidebar/:mainSideBarId", (req: Request, res: Respo
         res.json([])
     }
     const data = getMainElements(versionId, mainSideBarId)
-
 
     res.json(data)
 })
